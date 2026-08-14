@@ -1,0 +1,16 @@
+---
+- name: Configure SmartDeploy EC2
+  hosts: app
+  become: true
+  tasks:
+    - name: Update apt
+      apt: {update_cache: yes, cache_valid_time: 3600}
+    - name: Install Docker
+      apt: {name: docker.io, state: present}
+    - name: Start Docker
+      service: {name: docker, state: started, enabled: true}
+    - name: Add ubuntu to docker group
+      user: {name: ubuntu, groups: docker, append: true}
+    - name: Verify Docker
+      command: docker --version
+      changed_when: false

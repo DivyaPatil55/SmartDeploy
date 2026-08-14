@@ -1,0 +1,6 @@
+aws_region="ap-south-1"
+ami_id="REPLACE_WITH_UBUNTU_24_04_AMI_ID"
+instance_type="t2.micro"
+key_name="REPLACE_WITH_EC2_KEYPAIR_NAME"
+allowed_ssh_cidr="REPLACE_WITH_YOUR_PUBLIC_IP/32"
+allowed_app_cidr="0.0.0.0/0"

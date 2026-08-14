@@ -1,0 +1,1 @@
+package com.smartdeploy.model; import jakarta.validation.constraints.*; public record ServiceRequest(@NotBlank String name,@NotBlank String image,@Min(1) @Max(65535) int port) {}
